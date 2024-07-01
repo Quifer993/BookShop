@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import zolotorevskii.bookshop.dto.BookDto;
-import zolotorevskii.bookshop.models.Book;
 import zolotorevskii.bookshop.services.BooksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +40,7 @@ public class BookController {
     }
 
     @GetMapping("edit")
-    public String editBookPage(Model model, BookDto book) throws Exception {
+    public String editBookPage(Model model, BookDto book){
         model.addAttribute("book", book);
         return "books/edit";
     }
