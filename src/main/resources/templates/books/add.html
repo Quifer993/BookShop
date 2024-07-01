@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Book</title>
+</head>
+<body>
+<h2>Add New Book</h2>
+<form action="/books/add" method="post">
+    <p>Название: <input type="text" name ="name" /></p>
+    <p>Автор: <input type="text" name ="author" /></p>
+    <p>ISBN: <input type="text" maxlength="13" minlength="13" name="isbn" /></p>
+    <p><input type="submit" value="Save" /> <a href="/books">Cancel</a></p>
+</form>
+</body>
+</html>

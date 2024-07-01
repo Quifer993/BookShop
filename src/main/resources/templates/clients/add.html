@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Client</title>
+</head>
+<body>
+<h2>Add New Client</h2>
+<form action="/clients/add" method="post">
+    <p>Имя: <input type="text" name="name"/></p>
+    <p>Дата рождения: <input type="date" name="birthday"/></p>
+    <p><input type="submit" value="Save" /> <a href="/clients">Cancel</a></p>
+</form>
+</body>
+</html>

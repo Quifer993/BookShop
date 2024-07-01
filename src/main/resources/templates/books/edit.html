@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit book</title>
+</head>
+<body>
+<h2>Edit book</h2>
+<form action="/books/edit/" method="post">
+    <p>Название: <input type="text" name="name" th:value="${book.name}" /></p>
+    <p>Автор: <input type="text" name="author" th:value="${book.author}" /></p>
+    <p>ISBN: <input type="text" name="isbn" th:value="${book.isbn}" readonly /></p>
+    <p><input type="submit" value="Сохранить" /> <a th:href="@{/books}">Отмена</a></p>
+</form>
+</body>
+</html>

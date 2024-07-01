@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Client</title>
+</head>
+<body>
+<h2>Edit Client</h2>
+<form action="/clients/edit" method="post">
+    <input type="hidden" name="id" th:value="${client.id}" />
+    <p>Имя: <input type="text" name="name" th:value="${client.name}" /></p>
+    <p>Дата рождения: <input type="date" name="birthday" th:value="${client.birthday}" /></p>
+    <p><input type="submit" value="Сохранить" /> <a th:href="@{/clients}">Отмена</a></p>
+</form>
+</body>
+</html>

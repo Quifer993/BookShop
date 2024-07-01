@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список клиентов</title>
+</head>
+<body>
+<h2>Список клиентов</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ФИО</th>
+        <th>Дата рождения</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.name}"></td>
+        <td th:text="${client.birthday}"></td>
+        <td><form action="/clients/edit" method="get">
+            <input type="hidden" name="name" th:value="${client.name}">
+            <input type="hidden" name="birthday" th:value="${client.birthday}">
+            <input type="hidden" name="id" th:value="${client.id}">
+            <input type="submit" value="Редактировать">
+        </form></td>
+        <td>
+            <a th:href="@{/clients/delete(id=${client.id})}">Удалить</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<a href="/clients/add">Добавить клиента</a>
+</body>
+<br/>
+<br/>
+<a th:href="@{/}">На главную</a>
+</html>

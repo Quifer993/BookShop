@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Взять книгу на прочтение</title>
+</head>
+<body>
+<h2>Взять книгу на прочтение</h2>
+<form th:action="@{/loans/loan}" method="post">
+    <label for="isbn">Выберите книгу:</label>
+    <select id="isbn" name="isbn">
+        <option th:each="book : ${books}" th:value="${book.isbn}" th:text="${book.name}"></option>
+    </select>
+    <br/>
+    <label for="client">Выберите клиента:</label>
+    <select id="client" name="client">
+        <option th:each="client : ${clients}" th:value="${client.id}" th:text="${client.name}"></option>
+    </select>
+    <br/>
+    <input type="submit" value="Взять книгу">
+</form>
+<br/>
+<a th:href="@{/loans}">Вернуться</a>
+</body>
+</html>

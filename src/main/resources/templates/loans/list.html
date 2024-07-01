@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список забронированных книг</title>
+</head>
+<body>
+<h2>Список забронированных книг</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Клиент</th>
+        <th>День рождения клиента</th>
+        <th>Книга</th>
+        <th>Автор книги</th>
+        <th>ISBN</th>
+        <th>Время бронирования</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="loan : ${loans}">
+        <td th:text="${loan.client.name}"></td>
+        <td th:text="${loan.client.birthday}"></td>
+        <td th:text="${loan.book.name}"></td>
+        <td th:text="${loan.book.author}"></td>
+        <td th:text="${loan.book.isbn}"></td>
+        <td th:text="${loan.loanDate}"></td>
+        <td>
+            <a th:href="@{/loans/delete(id=${loan.id})}">Удалить</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<a href="/loans/add">Добавить бронь</a>
+</body>
+<br/>
+<br/>
+<a th:href="@{/}">На главную</a>
+</html>
